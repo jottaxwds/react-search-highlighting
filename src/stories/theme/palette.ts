@@ -1,0 +1,15 @@
+export default {
+  darkBlue: "#090B35",
+  midBlue: "#131A4E",
+  contentBlue: "#192259",
+  lightBlue: "#9898E1",
+  paleBlue: "#6086E5",
+  blue: "#436BC4",
+  light: "#C9D1D8",
+  green: "#00DC9C",
+  darkGreen: "#1FCB79",
+  orange: "#FBC64A",
+  red: "#EF7980",
+  subdued: "#858599",
+  white: "#FFFFFF",
+} as const;
