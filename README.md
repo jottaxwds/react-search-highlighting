@@ -1,6 +1,8 @@
 # REACT SEARCH HIGHLIGHTING
 `react-search-highlighting` is a React library that provides a set of components and utilities to make highlighting search terms in text content easy and customizable.
 
+<img src="./docs/assets/highlighting.png" width="500" />
+
 ## Features
 
 ### Highlighting Component
