@@ -1,8 +1,8 @@
 import React from "react";
 import { getHighlightedStringContent } from "./utils";
-import { uniqueId } from "lodash";
 import { ExactHighlightingProps } from "./types";
 import { defaultTheme } from "./constants";
+import Highlight from "./Highlight";
 
 function ExactHighlighting ({ termsToHighlight, children, caseSensitive, ignoreDiacritics, theme = defaultTheme }: ExactHighlightingProps) {
     const config = {
@@ -14,13 +14,7 @@ function ExactHighlighting ({ termsToHighlight, children, caseSensitive, ignoreD
     return React.useMemo(
         () => (
             <>
-                {highlightedContent.map(({ content, highlighted }) =>
-                    highlighted ? (
-                        <mark key={uniqueId('highlighted')} style={{ ...theme }} data-testid="highlighted">{content}</mark>
-                    ) : (
-                        <span key={uniqueId('not-highlighted')}>{content}</span>
-                    )
-                )}
+                {highlightedContent.map(({ content, highlighted }) => (<Highlight content={content} highlighted={highlighted} theme={theme} />))}
             </>
         ),
         [highlightedContent]

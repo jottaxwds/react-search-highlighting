@@ -24,6 +24,7 @@ function Highlighting({ children, termsToHighlight = '', config = defaultConfig,
     } : {...config};
 
     const newTermsToHighlight = termsToHighlight || contextTermsToHighlight;
+    // TODO: v2.0.0
     if (newTermsToHighlight === '' || typeof children !== 'string') {
         return <>{ children }</>;
     }
