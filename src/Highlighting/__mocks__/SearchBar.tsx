@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useHighlighting from '../useHighlighting';
+import useHighlighting from '../hooks/useHighlighting';
 
 const SearchBar = () => {
     const { updateTermsToHighlight } = useHighlighting();

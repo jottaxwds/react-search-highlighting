@@ -29,8 +29,8 @@ function Highlighting({ children, termsToHighlight = '', config = defaultConfig,
         return <>{ children }</>;
     }
     return mergedConfig.exactMatch ?
-    <ExactHighlighting theme={theme} termsToHighlight={newTermsToHighlight} caseSensitive={config.caseSensitive} ignoreDiacritics={config.ignoreDiacritics}>{children}</ExactHighlighting>
+    <ExactHighlighting theme={theme} termsToHighlight={newTermsToHighlight} caseSensitive={mergedConfig.caseSensitive} ignoreDiacritics={mergedConfig.ignoreDiacritics}>{children}</ExactHighlighting>
       :
-    <NonExactHighlighting theme={theme} termsToHighlight={newTermsToHighlight} caseSensitive={config.caseSensitive} ignoreDiacritics={config.ignoreDiacritics}>{children}</NonExactHighlighting>;
+    <NonExactHighlighting theme={theme} termsToHighlight={newTermsToHighlight} caseSensitive={mergedConfig.caseSensitive} ignoreDiacritics={mergedConfig.ignoreDiacritics}>{children}</NonExactHighlighting>;
 }
 export default Highlighting;

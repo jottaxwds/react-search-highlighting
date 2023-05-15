@@ -32,7 +32,6 @@ describe("List utils", () => {
     const sortedDates = sortedData.map(
       ({ application_date }) => application_date
     );
-    console.log('SortedDates -> ', sortedDates);
     const rightSorted =
       JSON.stringify(expectedSortedDates) === JSON.stringify(sortedDates);
     expect(rightSorted).toBeTruthy();

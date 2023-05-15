@@ -68,16 +68,58 @@ describe('SearchHighlight', () => {
     });
 
     describe('Exact', () => {
-        it('Should highlight with exact match', () => {
+        it('Should highlight with exact match ignoring diacritics', () => {
             const result = render(<WithListViewSearchHighlightExample config={{ exactMatch: true, caseSensitive: false, ignoreDiacritics: true }}/>);
             const searchInput = result.getByTestId('search-bar');
             fireEvent.change(searchInput, {
                 target: { value: 'dolor' },
             });
             const highlights = result.queryAllByTestId('highlighted');
-            expect(highlights).toHaveLength(2);
+            expect(highlights).toHaveLength(5);
             expect(highlights[0].textContent).toEqual('dôlor');
             expect(highlights[1].textContent).toEqual('dolor');
+        });
+
+        it('Should highlight with exact match ignoring diacritics & case sensitive', () => {
+            const result = render(<WithListViewSearchHighlightExample config={{ exactMatch: true, caseSensitive: true, ignoreDiacritics: true }}/>);
+            const searchInput = result.getByTestId('search-bar');
+            fireEvent.change(searchInput, {
+                target: { value: 'Dolor' },
+            });
+            let highlights = result.queryAllByTestId('highlighted');
+            expect(highlights).toHaveLength(0);
+            fireEvent.change(searchInput, {
+                target: { value: 'dolor' },
+            });
+            highlights = result.queryAllByTestId('highlighted');
+            expect(highlights).toHaveLength(5);
+        });
+
+        it('Should highlight with exact match not ignoring diacritics', () => {
+            const result = render(<WithListViewSearchHighlightExample config={{ exactMatch: true, caseSensitive: false, ignoreDiacritics: false }}/>);
+            const searchInput = result.getByTestId('search-bar');
+            fireEvent.change(searchInput, {
+                target: { value: 'doloré' },
+            });
+            const highlights = result.queryAllByTestId('highlighted');
+            expect(highlights).toHaveLength(1);
+            expect(highlights[0].textContent).toEqual('doloré');
+        });
+
+        it('Should highlight with exact match not ignoring diacritics & case sensitive', () => {
+            const result = render(<WithListViewSearchHighlightExample config={{ exactMatch: true, caseSensitive: true, ignoreDiacritics: false }}/>);
+            const searchInput = result.getByTestId('search-bar');
+            fireEvent.change(searchInput, {
+                target: { value: 'Doloré' },
+            });
+            let highlights = result.queryAllByTestId('highlighted');
+            expect(highlights).toHaveLength(0);
+            fireEvent.change(searchInput, {
+                target: { value: 'doloré' },
+            });
+            highlights = result.queryAllByTestId('highlighted');
+            expect(highlights).toHaveLength(1);
+            expect(highlights[0].textContent).toEqual('doloré');
         });
     });
 });

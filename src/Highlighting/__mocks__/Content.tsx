@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Highlighting from '../Highlighting';
-import useHighlighting from '../useHighlighting';
+import useHighlighting from '../hooks/useHighlighting';
 
 const Content = () => {
     const { config } = useHighlighting();
@@ -11,7 +11,7 @@ const Content = () => {
                 <Highlighting config={config}>
                 sit Sit SIt siT
                 Lorem îpsum dôlor sit âmet, çonsectetûr adipîscing élît.
-                Séd do ëiusmod têmpor încidunt ut lâbore et dolore mâgna âliqua.
+                Séd do ëiusmod têmpor încidunt ut lâbore et doloré mâgna âliqua.
                 Ût ênim âd minim vêniam, quis nostrûd exercîtâtîon ûllamco laborîs
                 nîsi ut âlîquip êx eâ commodo conséquat. Dûîs âute îrûre dolor in
                 reprehenderit în vôluptâte velit esse cillûm dolore eu fugîat nûlla parîâtûr.

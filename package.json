@@ -1,6 +1,6 @@
 {
   "name": "@jottaxwds/react-search-highlighting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Search Highlighting",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",

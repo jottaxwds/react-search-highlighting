@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HighlightingContext } from './HighlightingContext';
+import { HighlightingContext } from '../HighlightingContext';
 
 const useHighlighting = () => {
     const { termsToHighlight, updateTermsToHighlight, config, updateConfig } = React.useContext(HighlightingContext);

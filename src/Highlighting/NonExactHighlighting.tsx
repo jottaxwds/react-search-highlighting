@@ -4,6 +4,7 @@ import { getHighlightedStringContent } from './utils';
 import { NonExactHighlightProps } from './types';
 import { defaultTheme } from './constants';
 import Highlight from './Highlight';
+import uniqueId from 'lodash/uniqueId';
 
 function NonExactHighlighting({ termsToHighlight, children, caseSensitive, ignoreDiacritics, theme = defaultTheme }: NonExactHighlightProps) {
     const config = {
@@ -15,7 +16,7 @@ function NonExactHighlighting({ termsToHighlight, children, caseSensitive, ignor
     return React.useMemo(
         () => (
             <>
-                {highlightedContent.map(({ content, highlighted }) =>(<Highlight content={content} highlighted={highlighted} theme={theme} />))}
+                {highlightedContent.map(({ content, highlighted }) =>(<Highlight key={uniqueId('non-exact-highlighted')} content={content} highlighted={highlighted} theme={theme} />))}
             </>
         ),
         [highlightedContent]

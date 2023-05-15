@@ -1,5 +1,5 @@
 import { defaultConfig } from '../constants';
-import { exactHighlight } from '../algorithms/exactAlg';
+import { exactHighlight } from '../algorithms/exact';
 import { cleanDiacritics, getHighlightedStringContent } from '../utils';
 
 describe('SearchHighlight utils', () => {
