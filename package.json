@@ -1,6 +1,6 @@
 {
   "name": "@jottaxwds/react-search-highlighting",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Search Highlighting",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
@@ -9,6 +9,14 @@
     "type": "git",
     "url": "https://github.com/jottaxwds/react-search-highlighting"
   },
+  "keywords": [
+    "react",
+    "highlight",
+    "search highlight",
+    "string highlighting",
+    "string highlight",
+    "highlighting"
+  ],
   "files": [
     "dist"
   ],
